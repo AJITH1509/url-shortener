@@ -1,6 +1,11 @@
-body{
-    background-color: rgba(0, 255, 255, 0.296);
-}
+body {
+    margin: 0px;
+    background-image: url("background-image/url-Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
 
 .input-container{
     margin: 50px auto;
@@ -20,4 +25,46 @@ body{
 .btn-actions{
     justify-content: center;
 }
+.url-container{
+    display: flex;
+    margin: 0px auto;
+    max-width: 400px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    font-size: larger;
+}
+a:hover{
+    text-decoration: underline;
+}
+Button:hover{
+ border-radius: 50px;
+}
+.login-container{
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    text-align: center;
+   
+  }
+  .card-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .signin{
+    margin: 0px;
+  }
+  .signin:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+
+  
+
 
