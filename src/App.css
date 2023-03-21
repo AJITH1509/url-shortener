@@ -1,10 +1,11 @@
 body {
     margin: 0px;
-    background-image: url("background-image/url-Background.jpg");
+    /* background-image: url("background-image/url-Background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 100vh; */
+    background-color:#0b1736;
   }
 
 .input-container{
@@ -12,6 +13,7 @@ body {
     max-width: 600px;
     display: flex;
     justify-content: center;
+   
     
 }
 
@@ -28,14 +30,18 @@ body {
 .url-container{
     display: flex;
     margin: 0px auto;
-    max-width: 400px;
-    height: 30px;
-    justify-content: center;
+    max-width: 550px;
+    height: 70px;
+    justify-content: space-around;
     align-items: center;
 }
 a{
     text-decoration: none;
     font-size: larger;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: aqua;
+    padding: 10px 10px 10px 10px;
 }
 a:hover{
     text-decoration: underline;
@@ -67,6 +73,31 @@ Button:hover{
     display: flex;
     margin-right: 0px auto;
     align-items: center;
+  }
+  .url-container-subhead{
+    text-align: center;
+    background-color: rgb(227, 39, 39);
+    border-radius: 4px;
+    padding: 10px 10px 10px 10px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .url-container{
+      display: flex;
+      flex-direction: column;
+      margin: 0px auto;
+      max-width: 550px;
+      height: auto;
+      justify-content: space-around;
+      align-items: center;
+      gap: 16px;
+  }
+  .url-container-subhead{
+  margin-top: 5px;
+  }
+  .touch-icon{
+    margin-bottom: 5px;
+  }
   }
 
 
