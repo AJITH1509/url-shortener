@@ -63,6 +63,11 @@ Button:hover{
     cursor: pointer;
     text-decoration: underline;
   }
+  .showpassword{
+    display: flex;
+    margin-right: 0px auto;
+    align-items: center;
+  }
 
 
   

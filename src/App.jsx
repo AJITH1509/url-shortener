@@ -13,6 +13,9 @@ import Fade from "@mui/material/Fade";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { UrlShortener } from "./UrlShortener";
 import { LoginPage } from "./LoginPage";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
 import { SignUpPage } from "./SignUpPage";
 import { ForgetPass } from "./Forget";
 import { VerifyOtp } from "./VerifyOtp";
@@ -52,7 +55,7 @@ function App() {
               <IconButton
                 size="large"
                 edge="start"
-                color="white"
+                color="inherit"
                 aria-label="menu"
                 sx={{ mr: 2 }}
               >
@@ -69,11 +72,26 @@ function App() {
               onClose={handleClose}
               TransitionComponent={Fade}
             >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem onClick={handleClose}>
+                <IconButton>
+                  <AccountCircleIcon />
+                </IconButton>
+                Profile
+              </MenuItem>
               {token ? (
-                <MenuItem onClick={logOut}>Logout</MenuItem>
+                <MenuItem onClick={logOut}>
+                  <IconButton>
+                    <LogoutIcon />
+                  </IconButton>
+                  Logout
+                </MenuItem>
               ) : (
-                <MenuItem onClick={() => navigate("/")}> Login</MenuItem>
+                <MenuItem onClick={() => navigate("/")}>
+                  <IconButton>
+                    <LoginIcon />
+                  </IconButton>
+                  Login
+                </MenuItem>
               )}
             </Menu>
           </Toolbar>
@@ -82,11 +100,11 @@ function App() {
 
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        {/* <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login/forgetpassword" element={<ForgetPass />} />
         <Route path="/verifyotp" element={<VerifyOtp />} />
-        <Route path="/mailverification" element={<EmailVerification />} /> */}
-        {/* <Route path="/setpassword" element={<NewPassword />} /> */}
+        <Route path="/mailverification" element={<EmailVerification />} />
+        <Route path="/setpassword" element={<NewPassword />} />
         <Route path="/urlshortener" element={<UrlShortener />} />
       </Routes>
     </div>

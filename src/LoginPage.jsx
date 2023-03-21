@@ -11,6 +11,7 @@ import { API } from "../global";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import Checkbox from "@mui/material/Checkbox";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -24,6 +25,7 @@ const formValidationSchema = yup.object({
 export const LoginPage = () => {
   const [open, setOpen] = useState(false);
   const [severity, setSeverity] = useState(true);
+  const [show, setShow] = useState(false);
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -59,6 +61,11 @@ export const LoginPage = () => {
         }
       },
     });
+
+  const togglePassword = () => {
+    setShow(!show);
+  };
+
   return (
     <Stack spacing={2} sx={{ width: "100%" }}>
       <form onSubmit={handleSubmit}>
@@ -81,13 +88,18 @@ export const LoginPage = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               label="password"
-              type="password"
+              type={show ? "text" : "password"}
               variant="outlined"
               error={touched.password && errors.password}
               helperText={
                 touched.password && errors.password ? errors.password : null
               }
             />
+            <span className="showpassword">
+              <Checkbox onClick={togglePassword} aria-label="Checkbox demo" />
+              <span>Show password</span>
+            </span>
+
             <Button type="submit" variant="contained">
               Login
             </Button>
