@@ -42,8 +42,14 @@ function App() {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar color="secondary" position="static">
           <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Mini Link
+            <Typography
+              id="website-name"
+              variant="h4"
+              component="div"
+              sx={{ flexGrow: 1 }}
+            >
+              Mini<span>Link</span>
+              <small>.in</small>
             </Typography>
             <Button
               id="fade-button"
@@ -55,9 +61,8 @@ function App() {
               <IconButton
                 size="large"
                 edge="start"
-                color="inherit"
                 aria-label="menu"
-                sx={{ mr: 2 }}
+                sx={{ mr: 2, color: "White" }}
               >
                 <MenuIcon />
               </IconButton>

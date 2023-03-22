@@ -31,7 +31,7 @@ export const NewPassword = () => {
         if (data.status === 401) {
           console.log("error");
         } else {
-          navigate("/login");
+          navigate("/");
         }
       },
     });
